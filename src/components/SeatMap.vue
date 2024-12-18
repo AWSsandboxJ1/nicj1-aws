@@ -1,9 +1,47 @@
 <template>
-  <div>
+  <div class="seat-container">
     <div class="seat-map">
       <!-- 座席リスト -->
       <div
-        v-for="seat in seats"
+        v-for="seat in seats01"
+        :key="seat.id"
+        class="seat"
+        @click="openModal(seat)"
+      >
+        {{ seat.name || '' }}
+      </div>
+    </div>
+
+  
+    <div class="seat-map">
+      <!-- 座席リスト -->
+      <div
+        v-for="seat in seats02"
+        :key="seat.id"
+        class="seat"
+        @click="openModal(seat)"
+      >
+        {{ seat.name || '' }}
+      </div>
+    </div>
+
+    <div class="seat-map">
+      <!-- 座席リスト -->
+      <div
+        v-for="seat in seats03"
+        :key="seat.id"
+        class="seat"
+        @click="openModal(seat)"
+      >
+        {{ seat.name || '' }}
+      </div>
+    </div>
+
+  
+    <div class="seat-map">
+      <!-- 座席リスト -->
+      <div
+        v-for="seat in seats04"
         :key="seat.id"
         class="seat"
         @click="openModal(seat)"
@@ -37,7 +75,7 @@
 export default {
   data() {
     return {
-      seats: [
+      seats01: [
         { id: "A1", name: "" },
         { id: "A2", name: "" },
         { id: "A3", name: "" },
@@ -46,6 +84,40 @@ export default {
         { id: "B2", name: "" },
         { id: "B3", name: "" },
         { id: "B4", name: "" },
+        
+      ],
+      seats02: [
+        { id: "A1", name: "" },
+        { id: "A2", name: "" },
+        { id: "A3", name: "" },
+        { id: "A4", name: "" },
+        { id: "B1", name: "" },
+        { id: "B2", name: "" },
+        { id: "B3", name: "" },
+        { id: "B4", name: "" },
+        
+      ],
+      seats03: [
+        { id: "A1", name: "" },
+        { id: "A2", name: "" },
+        { id: "A3", name: "" },
+        { id: "A4", name: "" },
+        { id: "B1", name: "" },
+        { id: "B2", name: "" },
+        { id: "B3", name: "" },
+        { id: "B4", name: "" },
+        
+      ],
+      seats04: [
+        { id: "A1", name: "" },
+        { id: "A2", name: "" },
+        { id: "A3", name: "" },
+        { id: "A4", name: "" },
+        { id: "B1", name: "" },
+        { id: "B2", name: "" },
+        { id: "B3", name: "" },
+        { id: "B4", name: "" },
+       
       ],
       isModalOpen: false,
       selectedSeat: null,
@@ -84,7 +156,12 @@ body {
   height: 100vh;
   background-color: #f9f9f9;
 }
-
+.seat-container{
+  display: grid;
+  grid-template-columns: repeat(2,360px); /* 座席を横4列に配置 */
+  gap: 1px;
+  margin: 20px;
+}
 /* 座席表スタイル */
 .seat-map {
   display: grid;
