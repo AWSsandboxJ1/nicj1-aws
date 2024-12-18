@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import Todos from './components/Todos.vue'
+import SeatMap from './components/SeatMap.vue';
 </script>
 
 <template>
   <main>
-    <Todos />
+    <SeatMap />
   </main>
 </template>
 
