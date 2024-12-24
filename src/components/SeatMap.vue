@@ -50,6 +50,80 @@
       </div>
     </div>
 
+    <div class="seat-map">
+      <!-- 座席リスト -->
+      <div
+        v-for="seat in seats01"
+        :key="seat.id"
+        class="seat"
+        @click="openModal(seat)"
+      >
+        {{ seat.name || '' }}
+      </div>
+    </div>
+    <div class="seat-map">
+      <!-- 座席リスト -->
+      <div
+        v-for="seat in seats01"
+        :key="seat.id"
+        class="seat"
+        @click="openModal(seat)"
+      >
+        {{ seat.name || '' }}
+      </div>
+    </div>
+
+    <div class="seat-map">
+      <!-- 座席リスト -->
+      <div
+        v-for="seat in seats01"
+        :key="seat.id"
+        class="seat"
+        @click="openModal(seat)"
+      >
+        {{ seat.name || '' }}
+      </div>
+    </div>
+
+    <div class="seat-map">
+      <!-- 座席リスト -->
+      <div
+        v-for="seat in seats01"
+        :key="seat.id"
+        class="seat"
+        @click="openModal(seat)"
+      >
+        {{ seat.name || '' }}
+      </div>
+    </div>
+
+    <div class="seat-map-a">
+      <!-- 座席リスト -->
+      <div
+        v-for="seat in seats09"
+        :key="seat.id"
+        class="seat"
+        @click="openModal(seat)"
+      >
+        {{ seat.name || '' }}
+      </div>
+    </div>
+
+    <div class="seat-map-a">
+      <!-- 座席リスト -->
+      <div
+        v-for="seat in seats09"
+        :key="seat.id"
+        class="seat"
+        @click="openModal(seat)"
+      >
+        {{ seat.name || '' }}
+      </div>
+    </div>
+
+
+    
+
     <!-- モーダル -->
     <div class="modal" v-if="isModalOpen">
       <div class="modal-content">
@@ -119,6 +193,15 @@ export default {
         { id: "B4", name: "" },
        
       ],
+      seats09: [
+        { id: "A2", name: "" },
+        { id: "A3", name: "" },
+        { id: "A4", name: "" },
+        { id: "B2", name: "" },
+        { id: "B3", name: "" },
+        { id: "B4", name: "" },
+       
+      ],
       isModalOpen: false,
       selectedSeat: null,
       currentSeatName: "",
@@ -151,9 +234,8 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  height: 100vh;
   background-color: #f9f9f9;
 }
 .seat-container{
@@ -166,6 +248,14 @@ body {
 .seat-map {
   display: grid;
   grid-template-columns: repeat(4, 80px); /* 座席を横4列に配置 */
+  gap: 1px;
+  margin: 20px;
+}
+
+/* 座席表スタイル */
+.seat-map-a {
+  display: grid;
+  grid-template-columns: repeat(3, 80px); /* 座席を横3列に配置 */
   gap: 1px;
   margin: 20px;
 }
